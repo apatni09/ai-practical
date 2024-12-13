@@ -1,0 +1,44 @@
+Missionaries and Cannibal Problem:-
+
+On one bank of a river are three missionaries and three cannibals. There is one boat available that
+can hold up to two people and that they would like to use to cross the river. If the cannibals ever
+outnumber the missionaries on either of the river’s banks, the missionaries will get eaten.
+How can the boat be used to safely carry all the missionaries and cannibals across the river?
+
+Breath First Search
+Algorithm
+1. Create a variable called NODE-LIST and set it to the initial state.
+2. Loop until the goal state is found or NODE-LIST is empty.
+
+a. Remove the first element, say E, from the NODE-LIST. If NODE-LIST
+was empty then quit.
+
+b. For each way that each rule can match the state described in E do:
+i) Apply the rule to generate a new state.
+ii) If the new state is the goal state, quit and return this state.
+iii) Otherwise add this state to the end of NODE-LIST
+
+Procedure/Algorithm:
+Here openlist is Queue and Closelist is visited
+1. Create a structure for storing current state
+2. Function to generate successors.
+3. Create a structure for storing all successors of current state.
+4. Create a structure for storing non-repeating/Not visited(Open) successors
+5. Create a structure for storing repeating/Visited (Close) successors
+6. Function for moving from current to next state
+7. If generated successor has been already traversed, putting it into closed structure
+8. If generated successor is a new state, putting it into open structure
+9. Print if goal state achieved else Backtracking if goal state not achieved
+
+
+Production Rules for Missionaries and Cannibals problem
+Rule No. Rules and Action
+1 (x,y): Two missionaries can go only when x-2 >= y or x-2 = 0 in one bank and x +2 >= y in the other bank
+
+2 (x,y): Two cannibals can cross the river only when y-2 <= x or x = 0 in one bank and y +2 <= x or x=0 in the other bank.
+
+3 (x,y): one missionary and one cannibals can go in the boat only when x-1 >= y-1 or x = 0 in one bank and x +1 >= y+1 or x=0 in the other bank.
+
+4 (x,y): one missionary can cross the river only when x-1 >= y or x = 0 in one bank and x +1 >= y in the other bank.
+
+5 (x,y): one cannibal can cross the river only when y-1 < x or x = 0 in one bank and y +1 <= x or y = 0 in the other bank.

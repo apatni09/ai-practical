@@ -1,0 +1,6 @@
+Resolution: In simple words resolution is inference mechanism. Let's say we have
+clauses m :- b. and t :- p, m, z. So from that we can infer t :- p, b, z. - that is called resolution.
+Means, when you resolve two clauses you get one new clause. Another easy example, we have
+two sentences (1) All women like shopping. (2) Olivia is a woman. Now we ask query 'Who likes
+shopping'. So, by resolving above sentences we can have one new sentence Olivia like
+shopping.

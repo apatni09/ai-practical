@@ -1,0 +1,81 @@
+Water Jug Problem:
+This is the water jug problem using simple depth-first search of a graph. Jug X holds 4 liters,
+and jug Y holds 3 liters. There is a pump, which can be used to fill either Jug. How can you
+get exactly 2 liters of water into the 4-liter jug?
+Assumptions:
+a) We can fill a jug from the pump
+b) We can pour water out of the jug onto the ground
+c) We can pour water from one jug to another
+d) There are no other measuring devices available
+
+To solve the water jug problem, apart from problem statement we also need a control structure
+that loops through a simple cycle in which some rule whose left side matches the current state is
+chosen, the appropriate change to state is made as described in corresponding right side and the
+resulting state is checked to see if it corresponds to a goal state.
+
+Depth First Search :
+The DFS algorithm works as follows:
+1. Start by putting any one of the graph's vertices on top of a stack.
+2. Take the top item of the stack and add it to the visited list.
+3. Create a list of that vertex's adjacent nodes. Add the ones which aren't in the visited list to
+the top of stack.
+4. Keep repeating steps 2 and 3 until the stack is empty.
+
+Procedure/Algorithm:
+1. Create a structure for storing current state
+2. Create a structure for storing non-repeating(Open) successors
+3. Create a structure for storing repeating (Close) successors
+4. Create a structure for storing all successors of current state
+5. Function to generate successors
+6. Function for moving from current to next state
+7. If generated successor has been already traversed, putting it into closed structure
+8. If generated successor is a new state, putting it into open structure
+9. Print if goal state Achieved else Backtracking if goal state not achieved
+
+
+The following table gives the production rule to solve the water jug problem
+Rule
+No
+     Current state           New state           Action
+1        (x, y)             if x<4 (4,y)         Fill the 4-gallon jug.
+
+2        (x, y)             if y<3 (x,3)         Fill the 3-gallon jug.
+
+3         (x, y)            if x>0 (x-d, y)       Pour some water out of 4-gallon jug.
+
+4          (x, y)          if y>0 (x, y-d)         Pour some water out of 3-gallon jug.
+
+5           (x, y)           if x>0 (0, y)         Empty the 4-gallon jug on ground.
+
+6           (x, y)           if y>0(x, 0)           Empty the 3-gallon jug on ground.
+
+7          (x, y)     if (x+y)>=4 &(y>0)(4,y-(4-x))     Pour water from 3-gallon jug into the 4-gallon jug until the 4-gallon jug is full.
+
+8 if (x+y)>=3
+&(x>0)
+
+(x-(3-y),3) Pour water from 4-gallon jug into the 3-gallon jug
+
+until the 3-gallon jug is full.
+
+9 (x, y)
+if (x+y)<=4
+&(y>0)
+
+(x+y,0) Pour all the water from 3-gallon jug into the 4-
+
+gallon jug.
+
+10 (x, y)
+if (x+y)<=3
+&(x>0)
+
+(0,x+y) Pour all the water from 4-gallon jug into the 3-
+
+gallon jug.
+
+11 (0,2) (2,0) Pour the 2 gallons from the 3-gallon jug into the 4-
+
+gallon jug.
+
+12 (2,y) (0,y) Empty 2 gallons in the 4-gallon jug on the ground.

@@ -1,0 +1,45 @@
+In artificial intelligence, a heuristic is a technique designed for solving a problem more
+quickly when classic methods are too slow, or for finding an approximate solution when
+classic methods fail to find any exact solution. This is achieved by trading optimality,
+completeness, accuracy, or precision for speed. In a way, it can be considered a shortcut.
+A heuristic function, also called simply a heuristic, is a function that ranks alternatives
+in search algorithms at each branching step based on available information to decide which
+branch to follow. For example, it may approximate the exact solution.
+Steepest-Ascent Hill climbing: It first examines all the neighboring nodes and then selects
+the node closest to the solution state as of next node.
+
+Heuristic is a technique designed to solve a problem quickly, when classic methods are too
+slow, or for finding an approximate solution when classic methods fail to find any exact
+solution.
+o Hill climbing algorithm is a local search algorithm which continuously moves in the
+direction of increasing elevation/value to find the peak of the mountain or best
+solution to the problem. It terminates when it reaches a peak value where no
+neighbor has a higher value.
+o Hill climbing algorithm is a technique which is used for optimizing the mathematical
+problems. One of the widely discussed examples of Hill climbing algorithm is
+Traveling-salesman Problem in which we need to minimize the distance traveled by
+the salesman.
+o It is also called greedy local search as it only looks to its good immediate neighbor
+state and not beyond that.
+o A node of hill climbing algorithm has two components which are state and value.
+o Hill Climbing is mostly used when a good heuristic is available.
+o In this algorithm, we don't need to maintain and handle the search tree or graph as it
+only keeps a single current state.
+
+The steepest-Ascent algorithm is a variation of simple hill climbing algorithm. This algorithm
+examines all the neighboring nodes of the current state and selects one neighbor node
+which is closest to the goal state. This algorithm consumes more time as it searches for
+multiple neighbors
+Algorithm for Steepest-Ascent hill climbing:
+o Step 1: Evaluate the initial state, if it is goal state then return success and stop, else
+make current state as initial state.
+o Step 2: Loop until a solution is found or the current state does not change.
+a. Let SUCC be a state such that any successor of the current state will be better
+than it.
+b. For each operator that applies to the current state:
+	a. Apply the new operator and generate a new state.
+	b. Evaluate the new state.
+	c. If it is goal state, then return it and quit, else compare it to the SUCC.
+	d. If it is better than SUCC, then set new state as SUCC.
+	e. If the SUCC is better than the current state, then set current state to SUCC.
+Step 3: Exit.

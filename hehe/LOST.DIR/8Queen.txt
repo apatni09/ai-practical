@@ -1,0 +1,33 @@
+Problem Statement
+Given an 8x8 chess board, you must place 8 queens on the board so that no two queens
+attack each other. Print all possible matrices satisfying the conditions with positions with
+queens marked with '1' and empty spaces with '0'. You must solve the 8 queens problem
+using backtracking.
+ Note 1: A queen can move vertically, horizontally and diagonally in any number of
+steps.
+ Note 2: You can also go through the N-Queen Problem for the general approach to
+solving this problem.
+
+What is Backtracking?
+ Backtracking the solution of the problem depends on the previous steps taken. We
+take a step and then analyze it that whether it will give the correct answer or not?
+And if not, then we move back and change the previous step.
+
+Backtracking Approach
+This approach rejects all further moves if the solution is declined at any step, goes back to
+the previous step and explores other options.
+Algorithm
+Let's go through the steps below to understand how this algorithm of solving the 8 queens
+problem using backtracking works:
+ Step 1: Traverse all the rows in one column at a time and try to place the queen in that
+position.
+ Step 2: After coming to a new square in the left column, traverse to its left horizontal
+direction to see if any queen is already placed in that row or not. If a queen is found,
+then move to other rows to search for a possible position for the queen.
+ Step 3: Like step 2, check the upper and lower left diagonals. We do not check the
+right side because it's impossible to find a queen on that side of the board yet.
+ Step 4: If the process succeeds, i.e. a queen is not found, mark the position as '1' and
+move ahead.
+ Step 5: Recursively use the above-listed steps to reach the last column. Print the
+solution matrix if a queen is successfully placed in the last column.
+ Step 6: Backtrack to find other solutions after printing one possible solution.
